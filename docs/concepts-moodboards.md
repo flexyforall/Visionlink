@@ -23,7 +23,20 @@
 
 Общая шапка обоих: **Visionlink · Book a demo**, заголовок **«One platform for your community.»**, подзаголовок «CommunityOS ties every service your community relies on into a single system of systems.»
 
-### Concept 1 — «Сфера с изометрическими сценами» (`656:23848`)
+### Concept 1 — «One System, Many Hands» (`656:23848`)
+
+**Увидено на скриншоте:**
+- Теги концепта: System · Resilience · Connection.
+- **Чёрный фон**, белый гротеск, в центре hero — **светящаяся оранжево-жёлтая полусфера** на тёмной изометрической платформе; вокруг 5 тёмных плиток-сцен с маленькими оранжевыми фигурками людей и палатками, подписаны мелким капсом по краю (Resources, Sheltering, Volunteers, Referrals, Case management).
+- CTA «Book a demo» — **оранжево-красная градиентная кнопка** во всю ширину; в шапке — Visionlink · Book a demo › · иконка меню из точек.
+- Стикер: «On scroll, the main CTA sticks to the bottom and follows the user» — CTA прилипает к низу экрана при скролле.
+- Trusted by **[211s / United Ways / Health Systems / Emergency Management]** — слово после «Trusted by» меняется (4 варианта), логотипы 211, American Red Cross, CAN, United Way, DART, FEMA, монохромные белые на тёмно-синем, разделители «+».
+- Стикер: «Section animation if we have more than 8 logos» — анимация логотипов, если их больше 8 (со ссылкой-референсом).
+- Proof by numbers — тонкая сетка-таблица 2×2: $1.7B+ (financial assistance moved), 99%+ (monthly uptime, 15-year average), значок HIPAA (Secure by design), $60K (saved on a single no-code API build). Хвост числа («B+», «%+», «K») — приглушённым цветом. Eyebrow «▷ Proof by numbers» — оранжевый.
+- Фон при скролле перетекает **чёрный → тёмно-синий → ярко-синий** (Solutions) → **оранжевый/красный** (Reframe внизу) — это и есть переход Blue → Gray.
+- Solutions: табы Community / Disaster (белый активный таб), карточки на чёрном с метками «☀ BLUE SKIES» / «✦ GRAY SKIES» жёлтым моно-шрифтом, теги — моноширинный капс в рамках, внутри светлые UI-скрины, кнопки «Explore … ›» — белые.
+- Reframe на оранжево-красном фоне: текст проявляется по словам при скролле (стикер «Text animation» со ссылкой-референсом).
+- Раскадровка анимации: hero стартует с одного заголовка и сферы → появляется подзаголовок и CTA → сцена уезжает вверх, появляются Trusted by и Proof by numbers.
 
 - **Метафора:** сообщество за работой — маленькие изометрические сцены того, что оно делает (коробка с помощью, палатка-шелтер, папка кейс-менеджера), вращаются вокруг одного светящегося ядра. Ядро — CommunityOS, общий центр, к которому всё подключено.
 - **Идея:** каждая возможность — своя сцена вокруг сферы, это делает «system of systems» наглядным. Градиент от **холодного синего к тёплому оранжевому** передаёт Blue Skies / Gray Skies в одном кадре.
@@ -38,7 +51,17 @@
   5. Reframe — «VisionLink links any number of organizations on one secure platform. Shared intake, shared view, shared follow-through —»
 - На UI-разделе есть 3 стикера (текст не прочитан).
 
-### Concept 2 — «Колесо, которое делится на два дня» (`664:30327`)
+### Concept 2 — «System in motion» (`664:30327`)
+
+**Увидено на скриншоте:**
+- Теги концепта: Community · Continuity · Care. На обложке — телефон в руке над аэрофото пригорода.
+- **Почти чёрный тёплый фон** (графит), белый гротеск, кнопки — светло-кремовые прямоугольники с отдельной ячейкой-стрелкой «›»; меню — «гамбургер» в рамке.
+- Hero: сначала появляется **круг из тонких радиальных штрихов** (как циферблат/шкала) → заголовок, подзаголовок, CTA, логотипы (United Way, DART, FEMA) → внизу **колесо-дуга со штриховкой**, по которой вращаются карточки: Case Management → Resources & Referrals → Situational Awareness. Каждая карточка — светлый UI поверх **аэрофото** (кварталы для будней, побережье/рельеф для ЧС, шоссе).
+- Стикер: «Aerial, top-down photography reads as texture at small sizes while still carrying meaning. Each card is graded to its context — warm neighborhoods for everyday services, cooler terrain for disaster, etc.»
+- Ниже — «One platform, blue skies and gray.»; колесо раскрывается на две половины: сверху дуга «● BLUE DAYS · Community Solutions» с **оранжевыми** карточками-исходами (стопка, «Handoffs that close»), снизу «● GRAY DAYS · Disaster Solutions» с **сине-фиолетовыми** карточками («Everyone accounted for»). Между ними — Reframe с проявлением текста по словам.
+- Исходы: оранжевые (Blue) — Handoffs that close, One shared story, *feature 3*, *feature 4*; синие (Gray) — Everyone accounted for, Holds under load, *feature 3*, *feature 4*.
+- Стикер: «The hero shows capabilities as tools. Here we sort them into two modes — Blue Skies (everyday) and Gray Skies (disaster) — and reframe each as the outcome the client gets, not the tool. Same platform, shown as value.»
+- Внизу — кнопки «Explore Community Solutions ›» / «Explore Disaster Solutions ›» и фото **вид из иллюминатора самолёта** на побережье.
 
 - **Метафора:** единая экосистема в движении — возможности платформы вращаются вокруг ядра как колесо. При скролле колесо делится на две половины: **Blue Days** и **Gray Days** — будни и ЧС.
 - **Идея:** колесо делает «system of systems» наглядным; деление на дневное и ночное состояние передаёт Blue/Gray как одно непрерывное движение, а не две отдельные истории. **Фоны — вид сверху** (кварталы, дороги, рельеф) — сразу дают ассоциацию с сообществом и задают настроение ещё до текста.
