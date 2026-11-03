@@ -24,4 +24,4 @@ Figma: страница [UI → Homepage](https://www.figma.com/design/tImX0VDOc
 | Financial assistance | wKtu9VLr5JM | 965:165 | 965:359 |
 | Volunteers & donations | StrmusT8d9Y | 965:180 | 965:374 |
 
-Фото пока не загружены: домен `images.unsplash.com` закрыт сетью окружения. После загрузки удалить слой `placeholder-icon` внутри каждого слота.
+Фото загружены во все 18 слотов (900 px по ширине, бесплатная лицензия Unsplash).
