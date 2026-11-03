@@ -2,20 +2,44 @@
 
 Источник: Figma, страницы [Moodboards](https://www.figma.com/design/tImX0VDOcdV609vC8xBlDP/Visionlink?node-id=287-9109) (`287:9109`) и [Concepts](https://www.figma.com/design/tImX0VDOcdV609vC8xBlDP/Visionlink?node-id=476-15089) (`476:15089`).
 
-> **Статус:** прочитаны структура и все текстовые слои. Картинки (скриншоты) получить не удалось — исчерпан лимит Figma MCP. Поэтому цвета, шрифты, содержимое референсов и текст стикеров/комментариев на канвасе (их слои названы `title` / `description`, а сам текст метаданные не отдают) — **ещё не изучены**.
+> **Статус:** изучено всё — структура, тексты и скриншоты мудбордов и обоих концептов. Не изучены только **комментарии Figma** (в т. ч. Блейка): коннектор Figma не умеет их читать, а REST API Figma закрыт сетью окружения.
 
 ## Moodboards (`438:14766`)
 
-Два мудборда по одному шаблону (`287:9468` и `324:11952`), каждый из блоков:
-- **Moodboard Header** — заголовок/описание направления
-- **Sections & Layouts** — сетки референсов (по 1–4 картинки в ряд) с описаниями под каждой
-- **Colors** — палитра (3 свотча; у первого мудборда есть второй ряд)
-- **Typography** — карточка шрифтовой пары (заголовок + основной текст) и строки шрифтов (у второго мудборда — две строки)
-- Блок UI Components скрыт в обоих.
+Оба мудборда сделала дизайнер **Luba L.** Структура: описание и mood-теги → Sections & Layouts (Hero, Mob General UI, General UI, Cards, CTA & Footer) → Colors → Typography.
 
-Слева на странице — копия секции Client References (скриншоты urbi.ae, stripe.com, prolibu.com, palantir.com, osmo.supply).
+### Moodboard opt. 1 — «Assured · Composed · Capable» (`287:9468`)
 
-**Нужно посмотреть визуально:** какие референсы выбраны, подписи к ним, названия и HEX цветов, названия шрифтов.
+> A composed, technological aesthetic where real product does the talking. Dark, confident surfaces are broken by documentary photography of the people behind the work, so the system feels capable and human. Live product mockups stand in as proof, oversized statements carry authority, soft gradients used for depth. The tone is steady and self-assured: a platform that holds on your best day and your worst.
+
+- **Hero:** full-bleed тёмный hero с реальным продуктом; один огромный заголовок-утверждение задаёт уверенный, «операционный» тон; продукт как доказательство с первого экрана. Референсы — сайт платформы для пострадавших от катастроф («Put survivors at the center of disaster recovery» — фото людей + дашборд и телефон), Comand («Building the next unfair advantage for defence» — тёмный, карта на мониторе).
+- **Mob General UI:** реальные экраны продукта в центре; огромные списки-названия продуктов (Palantir: AIP / Gotham / Foundry) добавляют авторитета; между UI-блоками — «человеческий вес» (фото); тёмная база всё заземляет. Референсы: Retool, Palantir, «Survivor Management System» на фоне рельефа, TwelveLabs.
+- **General UI:** чистые минималистичные контентные секции чередуются с секциями «мокап продукта + фото»; реальные фото дают доверие, уверенные гротескные заголовки держат голос прямым. Референсы: пошаговые гайды восстановления (телефон над аэрофото разрушений), новости-карточки, видео с врачом, FAQ «Not AI-gen answers. Real ones here.»
+- **Cards:** карточки показывают живой UI продукта, чтобы возможность читалась с одного взгляда; мягкие градиентные карточки разбивают тёмный ритм и дают глубину, не теряя спокойствия (Retool, терминальные карточки, «Easy updates», «SOC 2 certified»).
+- **CTA & Footer:** прямые уверенные CTA на тёмных поверхностях, ведущие к одному пути — демо; мокап продукта подкрепляет «real and ready today»; подпись сдержанная — «quiet authority».
+- **Цвета:**
+  - Primary: **Graphite `#111111`**, **Steel Blue `#334965`**, **Bone `#F1F1F1`**
+  - Secondary: **Signal Orange** (градиент красно-оранжевый → оранжевый), **Mist Blue** (градиент светло-голубой → почти белый)
+- **Шрифт:** один — **Public Sans** (бесплатный), гротеск.
+
+### Moodboard opt. 2 — «Warm · Human · Connected» (`324:11952`)
+
+> A warm, human aesthetic where the platform reads as a living organism. A signature illustration carries the core idea — one connected community that holds together on the best day and the worst — and its cast of small figures recurs across the page as a running thread. Documentary photography of real people adds warmth and truth between sections; a warm palette and a single orange accent keep it grounded and hopeful. Confident but human — a system built to help people, shown through people.
+
+- **Hero — два варианта:**
+  - **Option A — best day / worst day:** изометрическая сцена, где сообщество показано как один скоординированный организм, работающий и в обычный день, и в ЧС (светлая половина / тёмная половина, маленькие оранжевые фигурки, склады, палатки).
+  - **Option B — the shield:** сфера из связанных точек окружает сообщество как защитная оболочка; каждая точка — отдельная система, вместе — один щит. Заголовок с курсивной антиквой, линейные фигурки людей в кругу, метки «211 Helpline — online», «Food Bank — coordinated», «Health System — in sync».
+- **Mob General UI:** функция показана через абстрактные модули и фрагменты там, где они объясняют идею (изометрические кубы, орбиты, сетка логотипов-интеграций на оранжевом).
+- **General UI:** модули и соединительные линии показывают части системы как одно целое; реальные элементы продукта показывают функцию напрямую, абстрактные фигуры и изолированные UI-элементы — через метафору (схемы-флоу «We handle what others hand off», сетка интеграций).
+- **Cards:** реальные фрагменты продукта + абстрактные фигуры + **аутентичные фото людей** (рабочий в каске, женщина) — «способность и человечность рядом».
+- **CTA & Footer:** тёплые, уверенные, но дружелюбные — «приглашающие, а не громкие» (оранжевая карточка с изометрической фигуркой, тёмный CTA с кремовой кнопкой, фото людей с планшетом).
+- **Цвета (Primary):** **Clay Brown `#231400`**, **Warm Cream `#ECE8DE`**, **Signal Orange `#ED6B24`**.
+- **Шрифты:** **Erode** (антиква для заголовков, акцентное слово — оранжевым) + **Satoshi** (гротеск для текста); оба бесплатные.
+
+### Как мудборды связаны с концептами
+
+- **Concept 1** = композиция и палитра **opt. 1** (graphite, steel blue → яркий синий, оранжевый градиент, Public Sans-подобный гротеск) + **изометрические фигурки из opt. 2 (Option A)** и сфера из Option B.
+- **Concept 2** = тёплая тёмная база и кремовые кнопки из **opt. 2** + принцип **opt. 1** «реальный продукт как доказательство» и документальная/аэро-фотография; оранжевый (Blue Days) и сине-фиолетовый (Gray Days) как два режима.
 
 ## Concepts (`721:44237`)
 
@@ -49,7 +73,7 @@
      - Blue skies: теги Intake, Case management, Resource directory, Referrals, Volunteers; **макет продукта — поиск помощи** («Food assistance near 80202»: Community Food Bank 1.2 mi · Open now; Hope Street Pantry 2.8 mi · Waitlist; статус «Referral Accepted»; фильтры Food / Housing / Benefits)
      - Gray skies: Situational awareness, Disaster case management; **макет дашборда** («Situational Awareness · Active response 3 countries · Live · Updated 2m ago · 12 Shelters open · 340 …»)
   5. Reframe — «VisionLink links any number of organizations on one secure platform. Shared intake, shared view, shared follow-through —»
-- На UI-разделе есть 3 стикера (текст не прочитан).
+- Стикеры на UI-разделе — пометки по анимации (прилипающий CTA, анимация логотипов, проявление текста); описаны выше.
 
 ### Concept 2 — «System in motion» (`664:30327`)
 
@@ -74,7 +98,7 @@
   2. «One platform, blue skies and gray.» → Reframe «Not another system to bolt on. Every agency runs its own tools…»
   3. Деление на **Blue days → Community Solutions** и **Gray days → Disaster Solutions** с CTA «Explore …»
   4. Карточки преимуществ: «One shared story — told once», «Handoffs that close», «Everyone accounted for», «Holds under load» (часть — плейсхолдеры *feature 3*, *feature 4*)
-- На UI-разделе есть 2 блока `comment` (текст не прочитан) — возможно, это комментарии/пометки.
+- Блоки `comment` на UI-разделе — пояснения дизайнера про аэрофото и про «исходы вместо инструментов»; описаны выше.
 
 ### Сравнение
 
@@ -88,8 +112,6 @@
 
 Оба концепта используют рекомендованную в брифе «центральную сферу» в hero и короче вайрфреймов (пока проработаны hero и первые 3–4 блока).
 
-## Что осталось изучить (когда восстановится лимит Figma)
+## Что осталось изучить
 
-- Скриншоты: обложки концептов (`656:27472`, `691:38720`), UI (`656:27493`, `691:38530`), мудборды (`287:9468`, `324:11952`).
-- Текст стикеров (`657:28360`, `657:28380`, `657:28371`) и блоков `comment` (`714:39694`, `714:39770`).
-- Цвета и шрифты из мудбордов.
+- Комментарии в Figma (в т. ч. Блейка) — нужно прислать текстом/скриншотами или открыть доступ к REST API Figma.
