@@ -1,0 +1,47 @@
+# Visionlink — система именования слоёв в Figma
+
+Действует для всех страниц сайта и всех брейкпоинтов. Первая страница, переименованная по ней: «Homepage - Mobile 390px» (Figma, секция `1070:15456`).
+
+## 1. Уровни
+
+| Уровень | Шаблон | Примеры |
+|---|---|---|
+| Экран (фрейм страницы) | `{Страница} — {Брейкпоинт} {ширина}` | `Home — Mobile 390`, `Home — Desktop 1440` |
+| Состояние экрана | `{Экран} / {состояние}` | `Home — Mobile 390 / Hero card open` |
+| Секция страницы | `Section / {Название}` | `Section / Hero`, `Section / Trust`, `Section / Proof`, `Section / Solutions`, `Section / Reframe`, `Section / Customer stories`, `Section / Final CTA`, `Section / Footer` |
+| Блок внутри секции | роль, Title case, без номеров | `Header`, `Heading group`, `Content`, `Actions`, `Stats`, `Cards`, `Carousel`, `Form` |
+| Повторяющийся элемент | одно имя у всех копий | `Stat`, `Badge`, `Dot`, `Audience item` (не `Stat 1`, `Stat 2`) |
+| Вариант элемента | `{Элемент} / {вариант}` | `Tab / Community`, `Arrow / Prev`, `Dot / Active`, `Field / Work email` |
+
+Секции на мобиле и десктопе называются одинаково: так их легко сравнивать и передавать в разработку.
+
+## 2. Словарь ролей
+
+**Контейнеры:** `Container` (обёртка во всю ширину), `Content`, `Header`, `Heading group` (eyebrow + title), `Intro`, `Body`, `Actions` (кнопки), `Row`, `Grid`, `List`, `Columns`, `Controls`, `Tabs` / `Tab bar` / `Tab`, `Form` / `Field` / `Input` / `Select`, `Media`, `Navbar`, `Menu`, `Brand`, `Legal`, `Links`, `Social`.
+
+**Тексты:** `Eyebrow` (контейнер надзаголовка) → внутри `Label`; `Title`, `Description`, `Body`, `Label`, `Value`, `Placeholder`, `Caption`, `Quote text`, `Author name`, `Tagline`, `Copyright`, `Logo text`, `Wordmark`.
+Текстовый слой называется по роли, а не по содержанию: содержание меняется, роль — нет.
+
+**Графика:**
+- `Icon / {имя}` — экземпляры иконок (`Icon / chevron`, `Icon / menu`, `Icon / plus`).
+- `Logo / {бренд}` — логотипы (`Logo / FEMA`, `Logo / 211`).
+- `Image / {что на фото}` — фото (`Image / Background`).
+- `Illustration / {название}` — составные иллюстрации; внутренности не переименовываются.
+- `Decor / {что}` — декоративные формы (`Decor / Glow`, `Decor / Ring`, `Decor / Line`), `Background`, `Divider`, `Line`, `Grid lines`.
+
+**Служебные префиксы:**
+- `_unused / …` — скрытые неиспользуемые слои, кандидаты на удаление.
+- `_draft / …` — черновики вне макета.
+
+## 3. Компоненты
+
+- Имя: `{Категория} / {Имя}` — `Footer / Menu item`, `Footer / Link`, `Icon / chevron`, `Icon / Social / LinkedIn`. Кнопка — `Button`.
+- Свойства вариантов называются по смыслу, без `Property 1`: `Type=Primary | Dark | Ghost` (Button), `Direction=Right | Down | Left | Up` (иконки-шевроны), `State=Default | Hover`, `Network=LinkedIn | …`.
+- Текстовые свойства: `Label`, `Title`, `Caption`.
+- Экземпляр на макете сохраняет имя компонента (кроме иконок: `Icon / {имя}`).
+- Рабочие доски с компонентами: `Components / Icons`, `Components / Footer`, `Icons / Social`.
+
+## 4. Цвета и тексты
+
+- Все цвета интерфейса берутся из коллекции переменных **Colors** (`Master/*` — базовые, `Design/*` — смысловые). Цвета внутри иллюстраций не привязываются.
+- Тексты — только через текстовые стили (`Mobile/…`; для десктопа появятся `Desktop/…` с теми же ролями).
