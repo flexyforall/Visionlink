@@ -26,11 +26,14 @@
 - `Icon / {имя}` — экземпляры иконок (`Icon / chevron`, `Icon / menu`, `Icon / plus`).
 - `Logo / {бренд}` — логотипы (`Logo / FEMA`, `Logo / 211`).
 - `Image / {что на фото}` — фото (`Image / Background`).
-- `Illustration / {название}` — составные иллюстрации; внутренности не переименовываются.
-- `Decor / {что}` — декоративные формы (`Decor / Glow`, `Decor / Ring`, `Decor / Line`), `Background`, `Divider`, `Line`, `Grid lines`.
+- `Illustration / {название}` — составные иллюстрации; внутренности не переименовываются. Мокапы интерфейса продукта — `Illustration / Product UI`.
+- `Decor / {что}` — декоративные формы (`Decor / Glow`, `Decor / Ring`, `Decor / Sphere`, `Decor / Wordmark`, `Decor / Gradient`, `Decor / Lines`), а также `Background` (внутри — `Fill`), `Divider`, `Line`, `Grid lines`.
+- Иконки берутся только из набора `UI Kit wip → Icons` (`1213:3360`); старые `Icon / …` с доски Components / Icons — устаревшие.
+
+**Секции, разбитые на части:** `Section / {Название} · {часть}` — `Section / Solutions · Community`, `Section / Solutions · Disaster`.
 
 **Служебные префиксы:**
-- `_unused / …` — скрытые неиспользуемые слои, кандидаты на удаление.
+- `_unused / …` — скрытые неиспользуемые слои, кандидаты на удаление. Скрытый декор, скриншоты-референсы и черновики удаляются сразу; `_unused` получают только скрытые блоки с контентом, которые могут понадобиться.
 - `_draft / …` — черновики вне макета.
 
 ## 3. Компоненты
