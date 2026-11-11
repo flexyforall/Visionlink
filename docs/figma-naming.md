@@ -41,6 +41,7 @@
 - Имя: `{Категория} / {Имя}` — `Footer / Menu item`, `Footer / Link`, `Icon / chevron`, `Icon / Social / LinkedIn`. Кнопка — `Button`.
 - Свойства вариантов называются по смыслу, без `Property 1`: `Type=Primary | Dark | Ghost` (Button), `Direction=Right | Down | Left | Up` (иконки-шевроны), `State=Default | Hover`, `Network=LinkedIn | …`.
 - Текстовые свойства: `Label`, `Title`, `Caption`.
+- Мобильная версия компонента — вариант того же набора, `Breakpoint=Desktop | Mobile`, а не отдельный компонент: тексты, иконки и тогглы общие, экземпляр переключается одним свойством (пример: `Solutions Feature Group`). Исключение — блоки, у которых на мобиле другая структура (Navbar, Footer, CTA): они отдельные компоненты `… - Desktop` / `… - Mobile`.
 - Экземпляр на макете сохраняет имя компонента (кроме иконок: `Icon / {имя}`).
 - Рабочие доски с компонентами: `Components / Icons`, `Components / Footer`, `Icons / Social`.
 
@@ -66,6 +67,7 @@
 | Body/M-Regular | 16 | 18 | Supreme Regular | 140% | -2% | — |
 | Body/S-Regular | 14 | 16 | Supreme Regular | 140% | -2% | — |
 | Caption/XL-Medium | 36 | 64 | Switzer Medium | 100% | -2% | UPPER |
+| Caption/L-Medium | 16 | 22 | Supreme Medium | 120% | 4% | UPPER |
 | Caption/S-Medium | 14 | 16 | Supreme Medium | 140% | 4% | UPPER |
 | Caption/S-Regular | 14 | 16 | Supreme Regular | 140% | 4% | UPPER |
 | Caption/XS-Medium | 12 | 14 | Supreme Medium | 140% | 2% | UPPER |
