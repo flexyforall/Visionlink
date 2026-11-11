@@ -73,5 +73,6 @@
 | Caption/S-Regular | 14 | 16 | Supreme Regular | 140% | 4% | UPPER |
 | Caption/XS-Medium | 12 | 14 | Supreme Medium | 140% | 2% | UPPER |
 
-- Не стилизуются: тексты внутри `Illustration / …` и UI-мокапов продукта (шрифт Aspekta), логотип в навбаре, декоративный `Wordmark` в футере.
+- Карточки-модули в иллюстрациях (сфера, сетка Capabilities): стили `Illustration/Card Title` (Switzer Medium 12) и `Illustration/Card Caption` (Supreme Regular 10), слой `Module / On | Off`.
+- Не стилизуются: прочие тексты внутри `Illustration / …` и UI-мокапов продукта (шрифт Aspekta), логотип в навбаре, декоративный `Wordmark` в футере.
 - Как скрипт задаёт стилю шрифт, который не может загрузить (Switzer/Supreme): стиль создаётся на Inter, затем `fontFamily`/`fontStyle` привязываются к временным STRING-переменным («Switzer», «Medium»), отвязываются, и временная коллекция удаляется. Привязать готовый стиль к тексту (`textStyleId`) можно без загрузки шрифта.
