@@ -43,6 +43,7 @@
 - Текстовые свойства: `Label`, `Title`, `Caption`.
 - Мобильная версия компонента — вариант того же набора, `Breakpoint=Desktop | Mobile`, а не отдельный компонент: тексты, иконки и тогглы общие, экземпляр переключается одним свойством (пример: `Solutions Feature Group`). Исключение — блоки, у которых на мобиле другая структура (Navbar, Footer, CTA): они отдельные компоненты `… - Desktop` / `… - Mobile`.
 - Экземпляр на макете сохраняет имя компонента (кроме иконок: `Icon / {имя}`).
+- Пункт архитектуры (Platform) — компонент `Architecture / Item`: `Breakpoint=Desktop | Mobile`, `State=Active | Inactive`; свойства `Title`, `Description` (текст), `Icon` (замена иконки). Desktop: иконка 32 + H4 + Body S, неактивный — прозрачность 60%. Mobile: иконка 24 + H4 + Body S + индикатор, у неактивного описание и индикатор скрыты, прозрачность 40%. Иконка активного — акцентная.
 - Eyebrow «Blue / Gray skies» — только компонент `Blue-Gray skies / Eyebrow` (`Sky=Blue skies | Gray skies`, `Breakpoint=Desktop | Mobile`; Desktop: иконка 20 + Caption/S-Medium, Mobile: 16 + Caption/S-Medium). Blue — солнце и акцент Orange, Gray — молния и Accent Purple. Экземпляр называется `Eyebrow`.
 - Рабочие доски с компонентами: `Components / Icons`, `Components / Footer`, `Icons / Social`.
 
