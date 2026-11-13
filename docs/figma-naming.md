@@ -44,6 +44,7 @@
 - Мобильная версия компонента — вариант того же набора, `Breakpoint=Desktop | Mobile`, а не отдельный компонент: тексты, иконки и тогглы общие, экземпляр переключается одним свойством (пример: `Solutions Feature Group`). Исключение — блоки, у которых на мобиле другая структура (Navbar, Footer, CTA): они отдельные компоненты `… - Desktop` / `… - Mobile`.
 - Экземпляр на макете сохраняет имя компонента (кроме иконок: `Icon / {имя}`).
 - Пункт архитектуры (Platform) — компонент `Architecture / Item`: `Breakpoint=Desktop | Mobile`, `State=Active | Inactive`; свойства `Title`, `Description` (текст), `Icon` (замена иконки). Desktop: иконка 32 + H4 + Body S, неактивный — прозрачность 60%. Mobile: иконка 24 + H4 + Body S + индикатор, у неактивного описание и индикатор скрыты, прозрачность 40%. Иконка активного — акцентная.
+- Навигация по шагам (Platform) — компонент `Steps nav / Item`: `Breakpoint=Desktop | Mobile`, `State=Active | Inactive` (+ `Mobile · Dropdown` — закрытый дропдаун со стрелкой вниз); свойства `Number`, `Label`. Цифра — стиль `Desktop/Heading/H5` (Switzer 20) / `Mobile/Heading/H5`. Раскрытый дропдаун на мобилке собирается из `Mobile · Active / Inactive`.
 - Eyebrow «Blue / Gray skies» — только компонент `Blue-Gray skies / Eyebrow` (`Sky=Blue skies | Gray skies`, `Breakpoint=Desktop | Mobile`; Desktop: иконка 20 + Caption/S-Medium, Mobile: 16 + Caption/S-Medium). Blue — солнце и акцент Orange, Gray — молния и Accent Purple. Экземпляр называется `Eyebrow`.
 - Рабочие доски с компонентами: `Components / Icons`, `Components / Footer`, `Icons / Social`.
 
@@ -65,6 +66,7 @@
 | Heading/H1 | 40 | 72 | Switzer Regular | 120% | -2% | — |
 | Heading/H2 | 32 | 48 | Switzer Regular | 120% | -2% | — |
 | Heading/H3 | 24 | 28 | Switzer Regular | 120% | -2% | — |
+| Heading/H5 | 16 | 20 | Switzer Regular | 140% | -2% | — |
 | Body/L-Regular | 24 | 44 | Supreme Regular | 140% | -2% | — |
 | Body/M-Regular | 16 | 18 | Supreme Regular | 140% | -2% | — |
 | Body/S-Regular | 14 | 16 | Supreme Regular | 140% | -2% | — |
