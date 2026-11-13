@@ -1,4 +1,4 @@
-// Capabilities · Community (light) v3: scattered pieces -> 2x2x2 lit core with small 1–2 cube pieces around -> one rounded body in a sphere.
+// Capabilities · Community (light) v4: scattered pieces -> 2x2x2 lit core (one gradient per face) with small 1–2 cube pieces -> one rounded body in a sphere.
 // One cube size (K) across all three frames, one solid border colour for every cube. Grid/shadows were removed by hand in Figma for frames 1 and 3. node scripts/capabilities-community.js <outdir>
 function buildSVGs(){
 const C30=Math.cos(Math.PI/6), K=34;            // one cube size for all three frames
@@ -42,6 +42,13 @@ function Doc(OX,OY,pre){ let gid=0; const defs=[], L={grid:[],shadow:[],back:[],
       for(const [x,y,z,ac] of all) cube(x,y,z,ac,{top:occ.has(key([x,y,z+1])),left:occ.has(key([x,y+1,z])),right:occ.has(key([x+1,y,z]))}); },
     cluster(cells,acc,gap,cx,cy,cz){ const s=1+gap; const sorted=[...cells].sort((a,b)=>(a[0]+a[1]+a[2])-(b[0]+b[1]+b[2])||a[2]-b[2]);
       const A=new Set(acc.map(key)); for(const c of sorted) cube(cx+c[0]*s,cy+c[1]*s,cz+c[2]*s,A.has(key(c))); },
+    // solid block with ONE gradient per big face; cube division lines drawn on top
+    block(x0,y0,n,acc){ const a0x=x0,a1x=x0+n,a0y=y0,a1y=y0+n,h=n;
+      const big=[[P(a0x,a0y,h),P(a1x,a0y,h),P(a1x,a1y,h),P(a0x,a1y,h)],[P(a0x,a1y,0),P(a1x,a1y,0),P(a1x,a1y,h),P(a0x,a1y,h)],[P(a1x,a0y,0),P(a1x,a1y,0),P(a1x,a1y,h),P(a1x,a0y,h)]];
+      for(const pts of big){ const d=poly(pts); L.cubes.push(`<path d="${d}" fill="${t.face}"/>`); if(acc) L.cubes.push(`<path d="${d}" fill="url(#${grad()})"/>`); }
+      for(let i=0;i<n;i++) for(let j=0;j<n;j++){ // top cells, left (y=max) cells, right (x=max) cells
+        const q=[[P(x0+i,y0+j,h),P(x0+i+1,y0+j,h),P(x0+i+1,y0+j+1,h),P(x0+i,y0+j+1,h)],[P(x0+i,a1y,j),P(x0+i+1,a1y,j),P(x0+i+1,a1y,j+1),P(x0+i,a1y,j+1)],[P(a1x,y0+i,j),P(a1x,y0+i+1,j),P(a1x,y0+i+1,j+1),P(a1x,y0+i,j+1)]];
+        for(const pts of q) L.cubes.push(`<path d="${poly(pts)}" fill="none" stroke="${t.line}" stroke-width="1.2" stroke-linejoin="round"/>`); } },
     raw(layer,s){ L[layer].push(s); },
     svg(){ return `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640"><defs>${defs.join('')}</defs><g id="Grid">${L.grid.join('')}</g><g id="Shadows">${L.shadow.join('')}</g><g id="Sphere back">${L.back.join('')}</g><g id="Cubes">${L.cubes.join('')}</g><g id="Sphere front">${L.front.join('')}</g></svg>`; } }; }
 // place pieces near target screen points so their silhouettes never touch (screen-space boxes + padding)
@@ -64,7 +71,7 @@ d=Doc(320,OY,'c2');                                   // no grid / shadows (remo
 const CORE8=[]; for(let x=0;x<2;x++) for(let y=0;y<2;y++) for(let z=0;z<2;z++) CORE8.push([x,y,z]);
 const SMALL=[[[0,0,0],[1,0,0]],[[0,0,0]],[[0,0,0],[0,0,1]],[[0,0,0]],[[0,0,0],[0,1,0]],[[0,0,0]],[[0,0,0],[0,0,1]],[[0,0,0]]];  // 12 cubes + 8 core = 20
 const coreC=[320,OY-16]; const ring=[]; for(let i=0;i<8;i++){ const a=-Math.PI/2+i*Math.PI/4; const j=[1,0.92,1.08,0.9,1.04,0.95,1.1,0.93][i], da=[0,0.12,-0.1,0.15,0,-0.12,0.1,-0.08][i]; ring.push([coreC[0]+205*j*Math.cos(a+da),coreC[1]+165*j*Math.sin(a+da)]); }
-d.figures([{ox:-0.5,oy:-0.5,cubes:CORE8,acc:true},...place(320,OY,ring,[CORE8.map(([x,y,z])=>[x-0.5,y-0.5,z])],14,SMALL)],true); res['light-2']=d.svg();
+d.figures(place(320,OY,ring,[CORE8.map(([x,y,z])=>[x-0.5,y-0.5,z])],14,SMALL),true); d.block(-0.5,-0.5,2,true); res['light-2']=d.svg();
 // 3
 const cells=[]; for(let x=0;x<3;x++) for(let y=0;y<3;y++) for(let z=0;z<3;z++){ const corner=(x!==1)&&(y!==1)&&(z!==1); if(corner && !(x===2&&y===2&&z===2)) continue; cells.push([x,y,z]); }
 // 3 · everything assembled into one rounded body inside the sphere (floor dropped so the sphere rests on it)
