@@ -1,5 +1,5 @@
-// Platform · Architecture section illustrations (dark): data box (3x3 cubes) -> config plates -> brand 2x2 cubes.
-// Frame n: layers 1..n are in place, layer n glows (one gradient per face), upcoming layers are dashed ghosts.
+// Platform · Architecture section illustrations (dark): data box (top) / config plates (middle) / brand 2x2 cubes (bottom).
+// All three layers are always drawn; on scroll the active one glows (one gradient per face): frame 1 top, 2 middle, 3 bottom.
 // Faces are #131110 @40% with a 40px background blur applied in Figma. node scripts/architecture-stack.js <outdir>
 function buildArch(preview){
 const C30=Math.cos(Math.PI/6), K=36, W=427, H=497;
@@ -26,14 +26,13 @@ function Doc(pre,oy){ let gid=0; const defs=[]; const G={};
     svg(order){ return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs>${defs.join('')}</defs>${order.filter(k=>G[k]).map(k=>`<g id="${k}">${G[k].join('')}</g>`).join('')}</svg>`; } }; }
 // geometry (world units, footprint -1.8..1.8)
 const B=1.8, S=2*B;
-const L={ data:{z0:0,h:1.2}, config:{z0:3.5,h:3*0.22+2*0.14}, brand:{z0:6.7,h:1.7} };
-const top=L.brand.z0+L.brand.h;           // 5.7
+const L={ brand:{z0:0,h:1.7}, config:{z0:4.3,h:3*0.22+2*0.14}, data:{z0:7.84,h:1.2} };   // top: data, middle: config, bottom: brand
+const top=L.data.z0+L.data.h;           // 5.7
 const oy=Math.round(H/2 + (top*K)/2 - (S*0.5*K)/2*0 ) ;  // vertical centring: screen span = top*K + S*K
 const OY0 = (H - (top*K + S*K))/2 + top*K + S*0.5*K*0; 
 function frame(n,pre){ const d=Doc(pre, H/2 + top*K/2);
-  const lay=[['data',1],['config',2],['brand',3]];
+  const lay=[['brand',3],['config',2],['data',1]];   // drawn bottom -> top; lit in scroll order 1 top, 2 middle, 3 bottom
   for(const [name,i] of lay){ const g=name[0].toUpperCase()+name.slice(1); const z0=L[name].z0, h=L[name].h, acc=(i===n);
-    if(i>n){ d.ghost('Ghost',-B,-B,z0,S,S,h); continue; }
     if(name==='data'){ d.boxBack(g,-B,-B,z0,S,S,h); const s=1, gap=0.2, o=-B+0.1;
       const cells=[]; for(let x=0;x<3;x++) for(let y=0;y<3;y++) cells.push([x,y]); cells.sort((a,b)=>(a[0]+a[1])-(b[0]+b[1]));
       for(const [x,y] of cells) d.prism(g,o+x*(s+gap),o+y*(s+gap),z0+0.1,s,s,1);
@@ -41,7 +40,7 @@ function frame(n,pre){ const d=Doc(pre, H/2 + top*K/2);
     if(name==='config'){ for(let k=0;k<3;k++) d.prism(g,-B,-B,z0+k*0.36,S,S,0.22); if(acc) d.boxFront(g,-B,-B,z0,S,S,h,true,false); }
     if(name==='brand'){ const s=1.7, gap=0.2; const cells=[[0,0],[1,0],[0,1],[1,1]];
       for(const [x,y] of cells) d.prism(g,-B+x*(s+gap),-B+y*(s+gap),z0,s,s,s); if(acc) d.boxFront(g,-B,-B,z0,S,S,h,true,false); } }
-  return d.svg(['Ghost','Data','Config','Brand']); }
+  return d.svg(['Brand','Config','Data']); }
 return {'arch-1':frame(1,'a1'),'arch-2':frame(2,'a2'),'arch-3':frame(3,'a3')}; }
 if (typeof module!=='undefined') module.exports=buildArch;
 if (typeof require!=='undefined' && require.main===module){ const fs=require('fs'), path=require('path'); const dir=process.argv[2]||'.'; const r=buildArch(false); for (const k in r) fs.writeFileSync(path.join(dir,k+'.svg'), r[k]); }
