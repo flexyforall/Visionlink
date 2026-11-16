@@ -23,10 +23,14 @@
 - **Architecture, Platform** (3 кадра `Section / Architecture` в той же секции): стопка из трёх слоёв — сверху данные (3×3 кубика в коробке), посередине плиты настройки, снизу 2×2 куба бренда. Все слои видны, по скроллу светится один оранжевым: 1 верх, 2 середина, 3 низ. Генератор `scripts/architecture-stack.js`.
 - **Hero animation, Platform**: раскадровка `Hero animation — Storyboard (wire)` над секцией Platform – Desktop и три состояния в секции `Product animation` (`1540:66482`). Табы 211 Helpline / Food Bank / County Emergency; в каждом целое окно приложения в стиле UI-сниппетов (сайдбар модулей с тумблерами, три модуля, один клик). Стикер рядом описывает идею «Modules that rebuild».
 
+- **About** (страница `1630:11448`): `About - Desktop 1440` (`1654:1583`) и `About - Mobile 390` (`1659:3`) собраны из копий Services. Секции: Hero (4 цифры: 30+ / 50 / 300+ / $1.5B+) → Trust → History (5 вех) → Reframe (цитата «the one system that did not fail») → Principles (3 карточки) → Team (Light, фото и руководители — заглушки) → CTA → Compliance & partners (Avancera) → Footer.
+- Обход шрифтов уточнён: перед `textStyleId` нужно задать Inter-тексту `fontSize`, `lineHeight`, `letterSpacing`, `textCase` из стиля и финальную ширину, иначе текст рендерится мелким или обрезается.
+
 ## Структура страницы Platform
 Hero (настраиваете сами) → Architecture (слои) → Configurable / API Builder (5 шагов, $60K после шага 4) → Reporting «Nothing trapped» (ResultsOS) → финальная бенто-секция (testimonial, mobile, 100+ languages, uptime, бейджи, procurement kit) → CTA.
 
 ## Открытые вопросы
+- About: годы для NextStep/Tapestry и CommunityOS, $1.5B (сайт) или $1.7B (бриф), фото команды и имена руководителей, нужен ли блок Avancera.
 - От клиента: свежие экраны продукта, демо-видео, реальная история «настроили за N дней», настоящий testimonial (сейчас заглушка Dana Whitfield), источник цифры $60K.
 - В кадрах Architecture 2 и 3 декоративная дуга всё ещё у верхнего левого пункта, а не у активного.
 - Проверить, что после обхода с `Steps nav / Item` остальные места с компонентом выглядят как раньше.
